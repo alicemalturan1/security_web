@@ -15,20 +15,20 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->integer("is_admin")->default(0);
-            $table->integer("is_client")->default(0);
-            $table->integer('is_worker')->default(0);
-            $table->text("notif_token")->nullable();
-            $table->text('notif_platform')->nullable();
-            $table->text("avatar")->nullable();
-            $table->text("api_token")->rand;
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->text("name_surname")->nullable();
-            $table->text("phone_number")->nullable();
-            $table->text("about")->nullable();
-            $table->rememberToken();
+            $table->text('type');
+            $table->text('icon')->default('pin');
+            $table->text('color')->default('#FF3D71');
+            $table->text('color_status')->default('danger');
+            $table->text('title');
+            $table->text('description');
+            $table->text('location')->nullable();
+            $table->integer('is_active')->default(1);
+            $table->text("status_text");
+            $table->text("status_color");
+            $table->text("preview_link")->nullable();
+            $table->text('formatted_adress')->nullable();
+            $table->text("going_id")->nullable();
+            $table->text('user_id');
             $table->timestamps();
         });
     }
