@@ -25,6 +25,7 @@ Route::get('/chat',function(){
 })->middleware('auth');
 Route::post('/chatMessage',[\App\Http\Controllers\ApiController::class,'chatMessage'])->middleware('auth');
 Route::get('/login',function(){
+
     return view('login');
 })->name('login');
 Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
