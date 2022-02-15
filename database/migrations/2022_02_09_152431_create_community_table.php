@@ -16,9 +16,9 @@ class CreateCommunityTable extends Migration
         Schema::create('community', function (Blueprint $table) {
             $table->id();
             $table->text('type');
-            $table->text('icon')->default('pin');
-            $table->text('color')->default('#FF3D71');
-            $table->text('color_status')->default('danger');
+            $table->text('icon');
+            $table->text('color');
+            $table->text('color_status');
             $table->text('title');
             $table->text('description');
             $table->text('location')->nullable();
